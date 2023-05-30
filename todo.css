@@ -1,0 +1,238 @@
+body {
+    background-image: url('https://plus.unsplash.com/premium_photo-1684331678124-ff62c82cef7a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 150px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    animation: fade-in 1s ease-out, slide-up 1s ease-out;
+    transition: padding 0.5s ease-in-out;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slide-up {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.container:hover {
+    padding: 120px;
+    transition: padding 0.5s ease-in-out;
+}
+
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+h1 {
+    text-align: center;
+    animation: slide-up 0.8s ease-in-out;
+}
+
+@keyframes slide-up {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.input-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    animation: slide-right 0.8s ease-in-out;
+}
+
+@keyframes slide-right {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.input-container input[type="text"] {
+    flex: 1;
+    padding: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.input-container input[type="text"]:focus {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.input-container button {
+    padding: 5px 10px;
+    background-color: #4caf50;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.input-container button:hover {
+    background-color: #45a049;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: rgb(108, 190, 248);
+    border-radius: 4px;
+    animation: fade-in 0.8s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+li.completed .task-title {
+    text-decoration: line-through;
+}
+
+.task-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    animation: slide-up 0.8s ease-in-out;
+}
+
+#clear-completed-btn {
+    background-color: #f44336;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#clear-completed-btn:hover {
+    background-color: #e53935;
+}
+
+/* Animations and transitions for task items */
+
+li {
+    position: relative;
+    overflow: hidden;
+    transform-origin: top;
+}
+
+li:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(100%);
+    z-index: -1;
+    transition: transform 0.3s ease-in-out;
+}
+
+li:hover:before {
+    transform: translateY(0);
+}
+
+li:not(:hover) .task-details {
+    transform: scaleY(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+li:hover .task-details {
+    transform: scaleY(1);
+}
+
+.task-details {
+    transform-origin: top;
+    transform: scaleY(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.delete-task-btn {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+li:hover .delete-task-btn {
+    opacity: 1;
+}
+li.completed .task-title {
+    text-decoration: line-through;
+}
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        height: 0;
+        padding: 0;
+        margin: 0;
+    }
+}
+/* Existing CSS code omitted for brevity */
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.container:hover footer {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+
